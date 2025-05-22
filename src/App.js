@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import IDVC from '@idscan/idvc2'
-import  '@idscan/idvc2/dist/css/idvc.css'
 
 class App extends Component {
       
@@ -9,92 +8,66 @@ class App extends Component {
     }
 
     componentDidMount () {
-    let idvc = new IDVC({
-      el: "videoCapturingEl",
-      licenseKey: "LICENSE_KEY",
-      networkUrl: "networks",
-      chunkPublicPath: "networks",
-      resizeUploadedImage: 1200,
-      fixFrontOrientAfterUpload: false,
-      autoContinue: true,
-      isShowDocumentTypeSelect: false,
-      useCDN: false,
-      isShowGuidelinesButton: false,
-      isSubmitMetaData: false,
-      useHeic: false,
-      showSubmitBtn: false,
-      hideDocumentTitle: false,
-      language: "en",
-      realFaceMode: "auto",
-      modalPosition: 'top',
-      processingImageFormat: 'jpeg',
-      documentTypes: [
-        {
-          type: "ID",
-          steps: [
-            {
-              type: "front",
-              name: "Document Front",
-            },
-            {
-              type: "pdf",
-              name: "Document Back",
-            },
-            {
-              type: "face",
-              name: "Face",
-            },
-          ],
-        },
-        {
-          type: "Passport",
-          steps: [
-            {
-              type: "mrz",
-              name: "Passport Front",
-            },
-            {
-              type: "face",
-              name: "Face",
-            },
-          ],
-        },
-        {
-          type: "PassportCard",
-          steps: [
-            {
-              type: "front",
-              name: "Passport Card Front",
-            },
-            {
-              type: "mrz",
-              name: "Passport Card Back",
-            },
-            {
-              type: "face",
-              name: "Face",
-            },
-          ],
-        },
-    
-        {
-          type: "InternationalId",
-          steps: [
-            {
-              type: "front",
-              name: "International ID Front",
-            },
-            {
-              type: "mrz",
-              name: "International ID Back",
-            },
-            {
-              type: "face",
-              name: "Face",
-            },
-          ],
-        }
-      ],
+   let idvc = new IDVC({
+        el: "videoCapturingEl",
+        licenseKey: "eyJwZGY0MTdrZXkiOiJTNTVLS0dOaENXYkhDSFlXanQ5R3o3dHF1TWZobkcwY1N1Y0YvbHJodi9abnBMdElES3dFRE9SUlptRVBnamZsY0t3dzBCdWdtMTNyT0RaakxYNkxCTkVkdVF3YUYvMnFjM3c4NEw5TGlqaXl2YXdRdmVlWmlMbkdFUW8xbndTb1Z5cGE3Z2NJaGFxMzdwRVNERk9KWTE4T0t6VHI4a3l1Mk5YV2w3NVA2eG89IiwiaW1hZ2VQcm9jZXNzaW5nS2V5IjoiUEdOTm1tNWFnUzFHZmZIbFVNMU1GanpHVFJyZG1Hd3dNRXMzbjFqT1M2RUVES3VYOFBweDFWZkc5MjQyZ0wyWGxNelhWTzBldEJYSGlCSGx5ZFEvaDZ3cEZCS1FHbkxSR2xYRWpWMXlnUnErL2g2c2ZGK3hxMFRCSFYzRm9QSnF2aVhvd0ozOXBHNU9DVTNVVUdDMmpjU3FIeUJzdDQ0UVlmQWJhVWRrcThFPSIsInRyYWNrU3RyaW5nUGFyc2VyS2V5IjoiY0IzSEJiSTluYktva0xqNG4xejl6aUtlTEJrQnVpUlpQeVJ6bFhNekpsTVAvS3EySjdEMmtmS2t6SGtyL3ExelZOQVZVbHhGMndPQlhTYVJMaUxkeVRWbHQ5bEt1RjQxRFRtMUtyNlM4MlFjdGo2QU5KZVVXcnRlNStKL1R2NmJ5bzlka1gzblpvUDc1TnNXb1hKbGdBM0dpWUNjMk83N2EwdjR2Y2tFWERZPSIsImNvbW1vbkxpY2Vuc2VLZXkiOiJyRDJPbWdKaFBZWjA0Z0prckVldE1iQ2xQN3o0VGxTL1I4RHc1UVpWUE93WjRva0JkS09QZ3Ewb29Mend2ekI3c0xIUUlkR2hGd252bVpuZWdOYmhEYzNhaUlON1RMNWJrNVA5YUN5cU91bml4MGw4Wm9HRDViSEltQ1hZRE82ZWxUamN0RVBCcjdpVmZMQ2lsbGExRjNnYVJ1ZnFQYlFGdzhKSmtSdk5IN2M9In0=",
+        networkUrl: "",
+        chunkPublicPath: "",
+        resizeUploadedImage: 1200,
+        fixFrontOrientAfterUpload: false,
+        autoContinue: true,
+        isShowDocumentTypeSelect: false,
+        useCDN: true,
+        isShowGuidelinesButton: false,
+        isSubmitMetaData: false,
+        useHeic: false,
+        showSubmitBtn: true,
+        hideDocumentTitle: false,
+        language: "en",
+        realFaceMode: "all",
+        modalPosition: "top",
+        processingImageFormat: "jpeg",
+        documentTypes: [
+          {
+            type: "IC",
+            steps: [
+              { type: "front", name: "Document Front" },
+              { type: "pdf", name: "Document Back" },
+              { type: "face", name: "Face" },
+            ],
+          },
+          {
+            type: "DL",
+            steps: [
+              { type: "front", name: "Document Front" },
+              { type: "pdf", name: "Document Back" },
+              { type: "face", name: "Face" },
+            ],
+          },
+          {
+            type: "Passport",
+            steps: [
+              { type: "mrz", name: "Passport Front" },
+              { type: "face", name: "Face" },
+            ],
+          },
+          {
+            type: "PassportCard",
+            steps: [
+              { type: "front", name: "Passport Card Front" },
+              { type: "mrz", name: "Passport Card Back" },
+              { type: "face", name: "Face" },
+            ],
+          },
+          {
+            type: "InternationalId",
+            steps: [
+              { type: "front", name: "International ID Front" },
+              { type: "mrz", name: "International ID Back" },
+              { type: "face", name: "Face" },
+            ],
+          },
+        ],
       onChange(data) {
         console.log("on change", data);
       },
@@ -179,10 +152,10 @@ class App extends Component {
           }
         };
 
-        fetch("https://dvs2.idware.net/api/v4/verify", {
+        fetch("https://dive.idscan.net/api/v4/verify", {
           method: "POST",
           headers: {
-            Authorization: "Bearer SECRET_KEY",
+            Authorization: "Bearer sk_XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
             "Content-Type": "application/json;charset=utf-8",
           },
           body: JSON.stringify(request),
@@ -203,7 +176,7 @@ class App extends Component {
     render () {        
         return (
             <div>
-                <h3>DVS Demo Application</h3>
+                <h3>DIVE Demo Application</h3>
                 <div id="videoCapturingEl"></div>
             </div>
         );
